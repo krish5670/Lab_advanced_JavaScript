@@ -20,7 +20,7 @@ function getWeather(city){
         .catch(error=> console.log(error.message));
 }
 
-getWeather('Bangalore');
+getWeather(city);
 
 function showWeather( data){
     const city=document.querySelector('.city');
@@ -44,7 +44,7 @@ function getFormattedDate(date){
     return `${days[date.getDay()]} ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 }
 
-document.querySelector('.search-box').addEventListener('keypress',function(event){
+const searchCity=document.querySelector('.search-box').addEventListener('keypress',function(event){
     if(event.key ==='Enter'){
         getWeather(this.value);
     }
